@@ -1,0 +1,43 @@
+site_name: TM1 REST API Documentation
+site_description: IBM Planning Analytics TM1 REST API
+site_url: https://<username>.github.io/tm1-rest-api/
+
+theme:
+  name: material
+
+nav:
+  - Home: index.md
+
+  - Getting Started:
+      - Introduction: getting-started/introduction.md
+      - Authentication: getting-started/authentication.md
+      - First Request: getting-started/first-request.md
+
+  - Concepts:
+      - Databases: concepts/databases.md
+      - Cubes: concepts/cubes.md
+      - Dimensions: concepts/dimensions.md
+      - Views: concepts/views.md
+      - Cellsets: concepts/cellsets.md
+      - Cells: concepts/cells.md
+
+  - Tutorials:
+      - Read Cube Data: tutorials/read-cube-data.md
+      - Write Cube Data: tutorials/write-cube-data.md
+      - Execute MDX: tutorials/execute-mdx.md
+      - Execute Process: tutorials/execute-process.md
+
+  - API Reference:
+      - Databases: api/databases.md
+      - Cubes: api/cubes.md
+      - Dimensions: api/dimensions.md
+      - Views: api/views.md
+      - Cellsets: api/cellsets.md
+      - Cells: api/cells.md
+      - Processes: api/processes.md
+
+  - OData:
+      - Query Options: odata/query-options.md
+
+  - Cookbook:
+      - Common Operations: cookbook/common-operations.md
