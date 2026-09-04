@@ -1,6 +1,6 @@
 site_name: TM1 REST API Documentation
 site_description: IBM Planning Analytics TM1 REST API
-site_url: https://<username>.github.io/tm1-rest-api/
+site_url: https://jerrykorulla.github.io/tm1-rest-api-docs/
 
 theme:
   name: material

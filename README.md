@@ -36,7 +36,9 @@ To add a page, create a Markdown file under `docs/` and add it to the `nav` sect
 
 ## Deployment
 
-The site is intended to be published via GitHub Pages:
+Pushes to `main` automatically build and publish the site to GitHub Pages via [.github/workflows/deploy.yml](.github/workflows/deploy.yml), which runs `mkdocs gh-deploy --force` to push the built site to the `gh-pages` branch.
+
+To deploy manually instead:
 
 ```bash
 mkdocs gh-deploy
