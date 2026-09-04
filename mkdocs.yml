@@ -4,6 +4,20 @@ site_url: https://jerrykorulla.github.io/tm1-rest-api-docs/
 
 theme:
   name: material
+  features:
+    - content.code.copy
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - tables
+  - toc:
+      permalink: true
 
 nav:
   - Home: index.md
@@ -15,8 +29,8 @@ nav:
 
   - Concepts:
       - Databases: concepts/databases.md
-      - Cubes: concepts/cubes.md
       - Dimensions: concepts/dimensions.md
+      - Cubes: concepts/cubes.md
       - Views: concepts/views.md
       - Cellsets: concepts/cellsets.md
       - Cells: concepts/cells.md
@@ -29,8 +43,8 @@ nav:
 
   - API Reference:
       - Databases: api/databases.md
-      - Cubes: api/cubes.md
       - Dimensions: api/dimensions.md
+      - Cubes: api/cubes.md
       - Views: api/views.md
       - Cellsets: api/cellsets.md
       - Cells: api/cells.md
