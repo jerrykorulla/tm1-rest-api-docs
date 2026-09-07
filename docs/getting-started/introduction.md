@@ -13,7 +13,7 @@ The TM1 REST API lets you manage and query IBM Planning Analytics (TM1) programm
 
 The API follows [OData v4](https://www.odata.org/) conventions:
 
-- **Base URL** — every endpoint is rooted at `https://<host>/api/v1/`.
+- **Base URL** — most endpoints in this documentation are called against a specific TM1 instance, rooted at `https://<host>/{instance}/api/v1/`. A separate, infrastructure-level Management API (`https://<host>/manage/v1/`) manages instances and databases themselves — see [Architecture](../concepts/architecture.md).
 - **JSON** — requests and responses use `application/json`.
 - **Entity addressing** — named entities are addressed with single quotes inside parentheses, e.g. `Databases('SalesPlanning')`, `Dimensions('Region')`.
 - **Nesting** — child resources are addressed by chaining paths, e.g. `Databases('SalesPlanning')/Dimensions('Region')/Hierarchies('Region')`.

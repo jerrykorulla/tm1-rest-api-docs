@@ -5,12 +5,8 @@ The TM1 REST API lets you manage and query IBM Planning Analytics (TM1) programm
 ## Quickstart
 
 ```bash
-TOKEN=$(curl -s -X POST "https://<host>/api/v1/Authenticate" \
-  -u "$TM1_USER:$TM1_PASSWORD" \
-  | jq -r .AccessToken)
-
-curl "https://<host>/api/v1/Databases" \
-  -H "Authorization: Bearer $TOKEN"
+curl "https://<host>/{instance}/api/v1/Databases" \
+  -u "$TM1_USER:$TM1_PASSWORD"
 ```
 
 See [First Request](getting-started/first-request.md) for the full walkthrough, including creating your first database.

@@ -28,7 +28,10 @@ nav:
       - First Request: getting-started/first-request.md
 
   - Concepts:
+      - Architecture: concepts/architecture.md
       - Databases: concepts/databases.md
+      - Users: concepts/users.md
+      - Groups: concepts/groups.md
       - Dimensions: concepts/dimensions.md
       - Cubes: concepts/cubes.md
       - Views: concepts/views.md
@@ -42,7 +45,11 @@ nav:
       - Execute Process: tutorials/execute-process.md
 
   - API Reference:
+      - Management API: api/management.md
+      - Sessions: api/sessions.md
       - Databases: api/databases.md
+      - Users: api/users.md
+      - Groups: api/groups.md
       - Dimensions: api/dimensions.md
       - Cubes: api/cubes.md
       - Views: api/views.md

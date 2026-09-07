@@ -1,6 +1,6 @@
 # Databases
 
-A **database** is the top-level container in TM1 / IBM Planning Analytics. It's a single, independently managed TM1 instance that holds its own cubes, dimensions, processes, and data — comparable to what earlier TM1 documentation called a "server" or "model."
+A **database** is a data container in TM1 / IBM Planning Analytics: it holds its own cubes, dimensions, processes, and data — comparable to what earlier TM1 documentation called a "server" or "model." A database is not the top-level container, though — it lives inside a TM1 **instance**, and in turn holds its own **[users](users.md)** and groups. See [Architecture](architecture.md) for the full instance/database/user hierarchy.
 
 Everything else in this API — [dimensions](dimensions.md), [cubes](cubes.md), [views](views.md), [cellsets](cellsets.md), and [cells](cells.md) — lives *inside* a database and is addressed relative to it.
 
@@ -19,10 +19,14 @@ You create a database once and then interact with it repeatedly through the [Dat
 
 ## Addressing a database
 
-Once a database exists, requests to objects inside it are scoped by the database name in the URL path, e.g.:
+Once a database exists, requests to objects inside it are scoped by the instance and database name in the URL path, e.g.:
 
 ```
-/api/v1/Databases('SalesPlanning')/Cubes
+/{instance}/api/v1/Databases('SalesPlanning')/Cubes
 ```
 
 See [Creating a database](../api/databases.md#create-a-database) for how to provision one, and [First Request](../getting-started/first-request.md) for a walkthrough of calling the API end to end.
+
+## Who can access a new database
+
+Whoever creates a database — any authenticated user via the Service API, or root credentials via the [Management API](../api/management.md) — automatically becomes a member of its `ADMIN` [group](groups.md). No one else can access it until that admin adds them via the [Users API](../api/users.md#create-a-user). See [Users](users.md) and [Architecture](architecture.md#who-can-create-a-database) for the full picture.

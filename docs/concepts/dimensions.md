@@ -29,11 +29,11 @@ A cube's shape is defined entirely by the dimensions assigned to it, in order. B
 Dimensions are scoped under a database:
 
 ```
-/api/v1/Databases('SalesPlanning')/Dimensions('Region')
+/{instance}/api/v1/Databases('SalesPlanning')/Dimensions('Region')
 ```
 
 And a hierarchy is scoped under its dimension:
 
 ```
-/api/v1/Databases('SalesPlanning')/Dimensions('Region')/Hierarchies('Region')
+/{instance}/api/v1/Databases('SalesPlanning')/Dimensions('Region')/Hierarchies('Region')
 ```
