@@ -9,7 +9,7 @@ For a single, precisely-addressed cell, the simplest MDX is a query whose rows a
 A cell isn't just a bare number. Confirmed live, by building cells of each kind (see [Cellsets API — Get a cellset](../api/cellsets.md#get-a-cellset) for the full field list):
 
 - **`Status`** is `Null` (no data), `Data` (a stored or rule-computed value), or `Error` (a rule failed to evaluate — e.g. division by zero produced `Value: "#N/A"`).
-- **`Consolidated`** marks a rolled-up value (the sum, typically, of its children). **`RuleDerived`** marks a value computed by a cube [rule](cubes.md#rules). Both are read-only: writing to either is rejected outright, with a distinct error for each — see [Cellsets API — Errors](../api/cellsets.md#errors).
+- **`Consolidated`** marks a rolled-up value (the sum, typically, of its children). **`RuleDerived`** marks a value computed by a cube [rule](rules-and-feeders.md). Both are read-only: writing to either is rejected outright, with a distinct error for each — see [Cellsets API — Errors](../api/cellsets.md#errors). A cell can be both: a consolidated total whose rule-derived children weren't properly [fed](rules-and-feeders.md#feeders) can understate the total with no error at all.
 - **`NullIntersected`** exists and is returned when explicitly requested (confirmed `false` on every cell checked, including empty ones) — no case producing `true` was found.
 
 See [Cells — via the Cellsets API](../api/cells.md) for how this maps to actual requests.

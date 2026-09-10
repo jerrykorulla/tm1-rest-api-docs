@@ -34,6 +34,7 @@ nav:
       - Groups: concepts/groups.md
       - Dimensions: concepts/dimensions.md
       - Cubes: concepts/cubes.md
+      - Rules & Feeders: concepts/rules-and-feeders.md
       - Views: concepts/views.md
       - Cellsets: concepts/cellsets.md
       - Cells: concepts/cells.md

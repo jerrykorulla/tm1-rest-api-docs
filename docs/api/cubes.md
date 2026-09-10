@@ -30,7 +30,7 @@ Endpoints for creating, listing, inspecting, and deleting cubes within a databas
 }
 ```
 
-`Rules` is the cube's rule script (`null` if it has none — see [Rules](../concepts/cubes.md#rules)). The dimensions assigned to a cube aren't included by default; fetch them with `?$expand=Dimensions` (or `.../Cubes('{cube}')/Dimensions` directly).
+`Rules` is the cube's rule script (`null` if it has none — see [Rules and Feeders](../concepts/rules-and-feeders.md)). The dimensions assigned to a cube aren't included by default; fetch them with `?$expand=Dimensions` (or `.../Cubes('{cube}')/Dimensions` directly).
 
 ## Create a cube
 
@@ -125,4 +125,4 @@ curl -X PATCH "https://<host>/{instance}/api/v1/Databases('test')/Cubes('SalesPl
 `200 OK`, with the updated [cube object](#the-cube-object) in the body (`Rules` now reflecting what you sent). Confirmed live — used to attach a real rule (later exercised to produce `RuleDerived`/`Error` cells; see [Cellsets API](cellsets.md#get-a-cellset)) and to clear it again by sending `""`.
 
 !!! note
-    Check a rule's syntax without saving it via `POST .../Cubes('{name}')/tm1.CheckRules` — returns `201 Created` with `{"value": []}` when the rule compiles cleanly, confirmed live. It only checks syntax, not runtime correctness: a rule that compiles fine can still produce `Status: "Error"` cells at evaluation time (e.g. a division by zero), also confirmed live.
+    Check a rule's syntax without saving it via `POST .../Cubes('{name}')/tm1.CheckRules` — returns `201 Created` with `{"value": []}` when the rule compiles cleanly, confirmed live. It only checks syntax, not runtime correctness: a rule that compiles fine can still produce `Status: "Error"` cells at evaluation time (e.g. a division by zero), also confirmed live. This also covers the syntax of any `FEEDERS;` block in the same string, but not whether the feeders are semantically complete — see [Rules and Feeders](../concepts/rules-and-feeders.md#rules-and-feeders-through-the-rest-api).

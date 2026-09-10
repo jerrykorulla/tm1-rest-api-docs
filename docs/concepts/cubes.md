@@ -8,6 +8,8 @@ A cube's shape is fixed at creation by which dimensions it has and in what order
 
 A cube can have **rules** — a script (TurboIntegrator's rule language, not TI processes) that derives some cells' values from others instead of storing them directly, e.g. computing a margin cube cell from revenue and cost cube cells. Rule-derived cells are read-only from the API's perspective; you can't overwrite a value that a rule computes.
 
+Getting a rule-derived cell into a **consolidated** total correctly also requires **feeders** — without them, consolidated totals can silently omit rule-derived contributions. See [Rules and Feeders](rules-and-feeders.md) for the full syntax and this gotcha in detail.
+
 ## Views
 
 You rarely query a cube's raw cell space directly. Instead you define a **[view](views.md)** — a saved (or ad hoc) slice of the cube along particular rows, columns, and titles — and execute that. Views live under their cube; see [Views](views.md).
