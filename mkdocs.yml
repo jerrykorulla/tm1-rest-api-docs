@@ -40,6 +40,7 @@ nav:
       - Cells: concepts/cells.md
 
   - Tutorials:
+      - Build a Cube from Scratch: tutorials/build-a-cube.md
       - Read Cube Data: tutorials/read-cube-data.md
       - Write Cube Data: tutorials/write-cube-data.md
       - Execute MDX: tutorials/execute-mdx.md
